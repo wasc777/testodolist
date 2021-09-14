@@ -24,6 +24,8 @@ class CreateTaskUserTable extends Migration
 
             $table->integer('task_id')->constrained()->onDelete('cascade');
             $table->integer('user_id')->constrained()->onDelete('cascade');
+            $table->integer('asigned_id')->constrained()->onDelete('cascade')->nullable();
+            $table->timestamps();
 
             // $table->unsignedBigInteger('task_id');
             // $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade')->onUpdate('cascade');

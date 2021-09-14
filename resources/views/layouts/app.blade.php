@@ -37,6 +37,9 @@
                     <ul class="navbar-nav mr-auto">
                         <li><a href="{{ route('tasks') }}">Tasks</a></li>
                     </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <li><a href="{{ route('user') }}">User</a></li>
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

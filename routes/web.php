@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
-use App\Models\Task;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,12 @@ use App\Models\Task;
 Route::get('/', [TaskController::class, 'index']);
 Route::get('/tasks', [TaskController::class, 'showall'])->name('tasks')->middleware('auth');
 Route::post('/tasks', [TaskController::class, 'ajouter'])->name('tasks.ajouter');
+Route::get('/tasks/{id}', [TaskController::class, 'deletetask'])->name('tasks.delete');
+
+Route::get('/tasks/modifier/{id}', [TaskController::class, 'showmodifier'])->name('tasks.showmodifier');
+Route::post('/tasks/modifier/{id}', [TaskController::class, 'modifier'])->name('tasks.modifier');
+
+Route::get('/user', [UserController::class, 'user'])->name('user');
 
 Auth::routes();
 

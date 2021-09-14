@@ -9,7 +9,9 @@ class Task_User extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'task_id'];
+    protected $table = 'task_user';
+
+    protected $fillable = ['user_id', 'task_id', 'asigned_id'];
 
     // return $user->id === $task->user_id;
 }
